@@ -75,14 +75,14 @@
                         
                             <label for="exampleFormControlSelect1">Varient</label>
                             <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-12 col-lg-12 col-xl-6">
                                     <select class="form-control" id="exampleFormControlSelect1">
                                         <option>Exterior</option>
                                         <option>1</option>
                                         <option>2</option>
                                     </select>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-12 col-lg-12 col-xl-6">
                                     <select class="form-control" id="exampleFormControlSelect1">
                                         <option>Interior </option>
                                         <option>1</option>

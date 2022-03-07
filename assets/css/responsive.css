@@ -28,7 +28,9 @@
 /*======================================================================*/
 
 @media only screen and (max-width: 768px) {
-    
+    .news-thumb img{
+        height: auto;
+    }
 }
 
 
