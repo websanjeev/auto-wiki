@@ -1,0 +1,527 @@
+body{
+    overflow: auto;
+}
+.bs-menu.bs-menu-desktop{
+    position: relative;
+    min-height: 45px;
+}
+.bs-menu .bs-menu-toggle{
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    margin-top: -20px;
+    width: 50px;
+    height: 45px;
+    background: #f1f1f1;
+    cursor: pointer;
+}
+
+.bs-menu.left .bs-menu-toggle{
+    left: 0;
+}
+
+.bs-menu.right .bs-menu-toggle{
+    right: 0;
+}
+
+.bs-menu .bs-menu-toggle:before{
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    background: linear-gradient(
+            to bottom,
+            #666, #666 20%,
+            transparent 20%, transparent 40%,
+            #666 40%, #666 60%,
+            transparent 60%, transparent 80%,
+            #666 80%, #666 100%
+    );
+}
+
+.bs-menu .bs-menu-toggle:hover{
+    background: #eaeaea;
+}
+
+.bs-menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/*
+.bs-menu.bs-menu-desktop > ul{
+    display: inline-block;
+}*/
+
+.bs-menu.bs-menu-desktop > ul:before,
+.bs-menu.bs-menu-desktop > ul:after{
+    content: '';
+    display: table;
+}
+
+.bs-menu.bs-menu-desktop > ul:after{
+    clear: both;
+}
+
+.bs-menu.bs-menu-desktop > ul > li{
+    float: left;
+}
+
+.bs-menu.bs-menu-desktop a{
+    display: block;
+    white-space: nowrap;
+}
+
+.bs-menu.bs-menu-desktop > ul ul{
+    z-index: 999;
+}
+
+/*== BS Menu Desktop Positioning ====*/
+
+.bs-menu.bs-menu-desktop > ul ul{
+    position: absolute;
+    visibility: hidden;
+    animation-duration: 0.2s;
+    -webkit-animation-duration: 0.2s;
+    -moz-animation-duration: 0.2s;
+    -o-animation-duration: 0.2s;
+    -ms-animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+}
+
+.bs-menu.bs-menu-desktop > ul > li:hover > ul{
+    animation-name: bsMenuSlideUp;
+    -webkit-animation-name: bsMenuSlideUp;
+    -moz-animation-name: bsMenuSlideUp;
+    -o-animation-name: bsMenuSlideUp;
+    -ms-animation-name: bsMenuSlideUp;
+}
+
+.bs-menu.bs-menu-desktop > ul > li > ul li:hover > ul,
+.bs-menu.bs-menu-desktop > ul > li > ul li:hover > ul.right{
+    animation-name: bsMenuSlideLeft;
+    -webkit-animation-name: bsMenuSlideLeft;
+    -moz-animation-name: bsMenuSlideLeft;
+    -o-animation-name: bsMenuSlideLeft;
+    -ms-animation-name: bsMenuSlideLeft;
+}
+
+.bs-menu.bs-menu-desktop > ul > li > ul li:hover > ul.left{
+    animation-name: bsMenuSlideRight;
+    -webkit-animation-name: bsMenuSlideRight;
+    -moz-animation-name: bsMenuSlideRight;
+    -o-animation-name: bsMenuSlideRight;
+    -ms-animation-name: bsMenuSlideRight;
+}
+
+.bs-menu.bs-menu-desktop ul li{
+    position: relative;
+}
+
+.bs-menu.bs-menu-desktop > ul > li > ul{
+    top: 100%;
+}
+
+.bs-menu.bs-menu-desktop > ul > li > ul,
+.bs-menu.bs-menu-desktop > ul > li > ul.right{
+    right: auto;
+    left: 0;
+}
+
+.bs-menu.bs-menu-desktop > ul > li > ul.left{
+    left: auto;
+    right: 0;
+}
+
+.bs-menu.bs-menu-desktop > ul > li > ul ul{
+    top: 0;
+}
+
+.bs-menu.bs-menu-desktop > ul > li > ul ul,
+.bs-menu.bs-menu-desktop > ul > li > ul ul.right{
+    right: auto;
+    left: 100%;
+}
+
+.bs-menu.bs-menu-desktop > ul > li > ul ul.left{
+    left: auto;
+    right: 100%;
+}
+
+/*===== BS Menu Mobile =====*/
+.bs-menu.bs-menu-mobile{
+    background: #fafafa;
+}
+
+.bs-menu.bs-menu-mobile ul{
+    overflow: auto;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.bs-menu-mobile ul li a{
+    display: block;
+    color: #00266C;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.bs-menu-mobile ul > li:not(:last-child){
+    border-bottom: 1px dashed #d5d5d5;
+}
+
+/*=== bs Menu Mobile Positioning ===*/
+
+.bs-overlay {
+    background: rgba(0,0,0,0.5);
+    visibility: hidden;
+    opacity: 0;
+    /*transition: opacity 0.2s;*/
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.bs-menu.bs-menu-mobile{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    z-index: 99999;
+    transition: all 0.2s;
+    overflow: hidden;
+}
+
+.bs-menu.bs-menu-mobile.left{
+    left: -250px;
+}
+
+.bs-menu.bs-menu-mobile.right{
+    right: -250px;
+}
+
+.bs-menu-mobile ul{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    transform: translateX(0);
+    transition: all 0.2s;
+    z-index: 9;
+}
+
+.bs-menu-mobile.right ul{
+    right: 0;
+}
+
+.bs-menu-mobile.left ul{
+    left: 0;
+}
+
+.bs-menu-mobile ul.active{
+    z-index: 999;
+}
+
+.bs-menu-mobile ul:not(.active){
+    transform: translateX(250px);
+}
+
+.bs-menu-mobile ul.prev{
+    transform: translateX(-250px);
+}
+
+/*===== Media Queries =====*/
+
+@media (max-width: 991px){
+
+    .bs-menu.bs-menu-desktop ul{
+        display: none;
+    }
+
+
+    body.bs-menu-opened-left,
+    body.bs-menu-opened-right {
+        overflow: hidden;
+    }
+
+    body.bs-menu-opened-left .bs-overlay,
+    body.bs-menu-opened-right .bs-overlay{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    body.bs-menu-opened-left .bs-menu-mobile.left{
+        transform: translateX(250px);
+        box-shadow: 3px 0 5px rgba(0,0,0,0.2);
+    }
+
+    body.bs-menu-opened-right .bs-menu-mobile.right{
+        transform: translateX(-250px);
+        box-shadow: -3px 0 5px rgba(0,0,0,0.2);
+    }
+
+}
+
+@media (min-width: 992px){
+    .bs-menu.bs-menu-desktop .bs-menu-toggle{
+        display: none;
+    }
+}
+
+
+/*=== BS Menu Slide Up ===*/
+@keyframes bsMenuSlideUp {
+
+    0%{
+        visibility: hidden;
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@-webkit-keyframes bsMenuSlideUp {
+
+    0%{
+        visibility: hidden;
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@-moz-keyframes bsMenuSlideUp {
+
+    0%{
+        visibility: hidden;
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@-o-keyframes bsMenuSlideUp {
+
+    0%{
+        visibility: hidden;
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+@-ms-keyframes bsMenuSlideUp {
+
+    0%{
+        visibility: hidden;
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+/*=== BS Menu Slide Left ===*/
+@keyframes bsMenuSlideLeft {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@-webkit-keyframes bsMenuSlideLeft {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+
+@-moz-keyframes bsMenuSlideLeft {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@-o-keyframes bsMenuSlideLeft {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@-ms-keyframes bsMenuSlideLeft {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+/*=== BS Menu Slide Right ===*/
+@keyframes bsMenuSlideRight {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@-webkit-keyframes bsMenuSlideRight {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@-moz-keyframes bsMenuSlideRight {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@-o-keyframes bsMenuSlideRight {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+
+@-ms-keyframes bsMenuSlideRight {
+
+    0%{
+        visibility: hidden;
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+
+    100%{
+        visibility: visible;
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}
+

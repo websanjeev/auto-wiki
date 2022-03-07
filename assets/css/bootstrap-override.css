@@ -1,0 +1,65 @@
+.btn {
+    background-color: #899EBC;
+    color: #fff;
+    border: 1px solid #CBD5E1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 18px;
+    transition: background-color 0.2s;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none;
+}
+
+a,
+.btn-link {
+    color: #475569;
+}
+
+a:hover,
+a:focus,
+a:visited,
+a:active,
+.btn-link:hover,
+.btn-link:focus,
+.btn-link:visited,
+.btn-link:active {
+    color: #475569;
+    text-decoration: none;
+    outline: none;
+}
+
+/* ======================================================= */
+
+.btn-submit {
+    width: 100%;
+    color: #fff;
+    background-color: #899EBC;
+    border-color: #899EBC;
+}
+
+.btn-submit:hover,
+.btn-submit:focus,
+.btn-submit:active,
+.btn-submit:visited {
+    color: #fff;
+    background-color: #475569;
+    border-color: #475569;
+}
+.form-check label{
+    color: #475569;
+    font-weight: 500;
+}
+
+.form-control{
+    color: #94A3B8;
+}
+::placeholder{
+    color: #94A3B8 !important;
+}
