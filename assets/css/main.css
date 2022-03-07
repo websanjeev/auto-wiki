@@ -125,6 +125,7 @@ a.more-info:hover{
     margin-bottom: 10px;
 }
 .news-thumb-img {
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
     margin-bottom: 17px;
