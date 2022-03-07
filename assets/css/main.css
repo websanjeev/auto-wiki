@@ -9,7 +9,7 @@ label{
     font-style: normal;
     font-weight: bold;
     font-size: 13px;
-    line-height: 15px;
+    line-height: 8px;
     color: #475569;
 }
 
@@ -20,7 +20,7 @@ label{
     border-bottom: 1px solid #C4C4C4;
 }
 .company-logo {
-	max-width: 156px;
+	width: 156px;
 	float: left;
 }
 .company-logo img{
