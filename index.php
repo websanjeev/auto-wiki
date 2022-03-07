@@ -2,7 +2,7 @@
 
 <!-- ================================== -->
 <section class="section-row">
-    <div class="container-fluid">
+    <div class="container">
         <div class="d-lg-flex d-xl-flex">
             <div class="content-left-wrapper">
                 <h3 class="heading-top half">Search Car Database</h3>
